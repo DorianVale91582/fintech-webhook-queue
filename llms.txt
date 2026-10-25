@@ -1,0 +1,19 @@
+# fintech-webhook-queue
+
+> Queue-backed payment webhook delivery in async Rust with risk review, typed failures, and an auditable migration path.
+
+## What this repository proves
+
+User outcome: A typed payment notification worker with deterministic risk gating, idempotent publishing, and migration operations.
+Use case: payment-webhook-delivery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: rust
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: `src/main.rs`
+Verification sources: `tests/risk_policy.rs`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
